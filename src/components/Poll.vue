@@ -1,5 +1,5 @@
 <template>
-  <div class="w-[90%] poll-container max-w-[400px] mx-auto p-[1.2rem] border border-[#ccc] bg-[#f9f9f9] mt-[10rem]">
+  <div class="w-[90%] poll-container max-w-[400px] mx-auto p-[1.2rem] border border-[#ccc] bg-[#f9f9f9] mt-[5rem]">
     <h1 class="text-center mb-[1.2rem] font-bold">{{ question }}</h1>
     <div class="results">
       <div
