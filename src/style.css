@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+
+@layer base {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      font-weight: normal;
+      padding: 0;
+    }
+  }
+
+  .transitionEffect {
+    transition: all 0.3s linear;
+  }
+
+  @layer components {
+    .option {
+        @apply my-[0.5rem] p-[0.7rem] border border-[#ccc] rounded-[0.4rem] cursor-pointer text-center bg-[#fff]
+    }
+  }
