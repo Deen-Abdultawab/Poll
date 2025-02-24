@@ -35,6 +35,7 @@
 </template>
 
 <script setup lang="ts">
+// I received the Test mail on the 23rd february 2024 @ 7:25pm
 import { ref } from 'vue';
 
 interface PollOption {
