@@ -1,27 +1,29 @@
 <template>
-  <div class="w-[90%] poll-container max-w-[400px] mx-auto p-[1.2rem] border border-[#ccc] bg-[#f9f9f9] mt-[5rem]">
-    <h1 class="text-center mb-[1.2rem] font-bold">{{ question }}</h1>
-    <div class="results">
-      <div
-        v-for="(option, index) in options"
-        :key="index"
-        class="option transitionEffect relative result-bar hover:bg-[#e0e0e0]"
-        @click="vote(index)"
-      >
+  <section class="w-[90%] max-w-[400px] mx-auto">
+    <div class="p-[1.2rem] border border-[#ccc] bg-[#f9f9f9] mt-[5rem]">
+      <h1 class="text-center mb-[1.2rem] font-bold">{{ question }}</h1>
+      <div class="results">
         <div
-          class="overlay absolute w-0 h-full top-0 left-0 rounded-[0.4rem] bg-[#42b983] z-[1] transition-width duration-1000 ease" 
-          :style="{ width: hasVoted ? calculatePercentage(option.votes) + '%' : '0%' }"
-          :class="hasVoted && calculatePercentage(option.votes) !== '100.00'? '!rounded-r-[0] p-[0.5rem]' : ''"
-        ></div>
-        <div 
-        class="z-[22] relative"
+          v-for="(option, index) in options"
+          :key="index"
+          class="option transitionEffect relative result-bar hover:bg-[#e0e0e0]"
+          @click="vote(index)"
         >
-          <span>
-            {{ option.text }}
-          </span>
-          <span v-if="hasVoted">
-            ({{ calculatePercentage(option.votes) }}%)
-          </span>
+          <div
+            class="overlay absolute w-0 h-full top-0 left-0 rounded-[0.4rem] bg-[#7bd4ac] z-[1] transition-width duration-1000 ease" 
+            :style="{ width: hasVoted ? calculatePercentage(option.votes) + '%' : '0%' }"
+            :class="hasVoted && calculatePercentage(option.votes) !== '100.00'? '!rounded-r-[0] p-[0.5rem]' : ''"
+          ></div>
+          <div 
+          class="z-[22] relative"
+          >
+            <span>
+              {{ option.text }}
+            </span>
+            <span v-if="hasVoted">
+              ({{ calculatePercentage(option.votes) }}%)
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -29,7 +31,7 @@
       {{ error }}
     </div>
     <button v-if="hasVoted" @click="resetVote" class="border border-black p-[0.5rem] rounded-[0.5rem] mt-4 cursor-pointer">Revote</button>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
